@@ -12,7 +12,7 @@
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" userLabel="view">
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" userLabel="view" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -52,6 +52,9 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.60842790250000001" green="0.2419137827" blue="0.88860818610000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <action selector="backgroundTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YQW-AB-NWu"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="phoneNumberTextField" destination="Qka-87-t1l" id="ysg-pj-V6g"/>
