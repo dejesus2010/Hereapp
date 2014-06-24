@@ -40,6 +40,7 @@
         [messageController setMessageComposeDelegate:self];
         [messageController setRecipients:[NSArray arrayWithObject:@"7277431594"]];
         [messageController setBody:@"I'm Here!\n This message was sent from my app... Did it work?"];
+        [self presentViewController:messageController animated:YES completion:nil];
         NSLog(@"Sent text");
     }
     else{
@@ -61,8 +62,11 @@
             break;
             
         default:
+            NSLog(@"Default");
             break;
     }
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 

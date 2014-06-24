@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 
-@interface HEREViewController : UIViewController <MFMessageComposeViewControllerDelegate,UITextFieldDelegate>{
+@interface HEREViewController : UIViewController <MFMessageComposeViewControllerDelegate,UITextFieldDelegate, MFMessageComposeViewControllerDelegate>{
     
     IBOutlet UITextField *phoneNumberTextField;
 }
