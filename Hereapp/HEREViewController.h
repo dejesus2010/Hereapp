@@ -12,7 +12,9 @@
 @interface HEREViewController : UIViewController <MFMessageComposeViewControllerDelegate,UITextFieldDelegate, MFMessageComposeViewControllerDelegate>{
     
     IBOutlet UITextField *phoneNumberTextField;
+    
 }
 - (IBAction)imHereButtonPress:(id)sender;
+
 
 @end

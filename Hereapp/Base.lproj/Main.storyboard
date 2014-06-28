@@ -4,30 +4,26 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--hereapp Home View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="HEREViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" userLabel="hereapp Home View Controller" customClass="HEREViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" userLabel="view" customClass="UIControl">
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" userLabel="view">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qka-87-t1l">
-                                <rect key="frame" x="76" y="125" width="159" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qka-87-t1l">
+                                <rect key="frame" x="81" y="128" width="159" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
-                                <connections>
-                                    <action selector="hideKeyboard:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="xNZ-Lo-mEU"/>
-                                    <action selector="hideKeyboardTouchOutside:" destination="vXZ-lx-hvc" eventType="touchCancel" id="RMO-nn-K8p"/>
-                                </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Jq-em-nLM">
-                                <rect key="frame" x="131" y="188" width="58" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Jq-em-nLM">
+                                <rect key="frame" x="131" y="179" width="58" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="I'm Here">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -37,8 +33,8 @@
                                     <action selector="imHereButtonPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ezl-rT-5J1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkw-Ik-pQe">
-                                <rect key="frame" x="93" y="39" width="135" height="52"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkw-Ik-pQe">
+                                <rect key="frame" x="93" y="57" width="135" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="hereapp">
@@ -52,8 +48,22 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.60842790250000001" green="0.2419137827" blue="0.88860818610000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7Jq-em-nLM" secondAttribute="trailing" constant="131" id="7Dx-6d-mFC"/>
+                            <constraint firstItem="vkw-Ik-pQe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="93" id="Pm0-EG-3D9"/>
+                            <constraint firstItem="Qka-87-t1l" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="81" id="VYD-UV-QqQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Qka-87-t1l" secondAttribute="trailing" constant="80" id="Xet-gf-OvI"/>
+                            <constraint firstItem="7Jq-em-nLM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="131" id="dis-MT-SRM"/>
+                            <constraint firstAttribute="trailing" secondItem="vkw-Ik-pQe" secondAttribute="trailing" constant="92" id="gHF-mu-WlJ"/>
+                            <constraint firstItem="Qka-87-t1l" firstAttribute="top" secondItem="vkw-Ik-pQe" secondAttribute="bottom" constant="19" id="u3k-d2-6mb"/>
+                            <constraint firstItem="vkw-Ik-pQe" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="37" id="vLW-Kf-7yt"/>
+                            <constraint firstItem="7Jq-em-nLM" firstAttribute="top" secondItem="Qka-87-t1l" secondAttribute="bottom" constant="21" id="zn8-8P-rQy"/>
+                        </constraints>
                         <connections>
-                            <action selector="backgroundTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YQW-AB-NWu"/>
+                            <outletCollection property="gestureRecognizers" destination="Adm-mb-xrf" appends="YES" id="8gv-wX-B6w"/>
+                            <outletCollection property="gestureRecognizers" destination="sFR-LU-EoA" appends="YES" id="dZq-oU-qGw"/>
+                            <outletCollection property="gestureRecognizers" destination="sDf-bN-feY" appends="YES" id="g4e-Rb-9Fw"/>
                         </connections>
                     </view>
                     <connections>
@@ -61,6 +71,21 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="sFR-LU-EoA">
+                    <connections>
+                        <action selector="showSwipLeft:" destination="vXZ-lx-hvc" id="b9Z-FW-lBr"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="Adm-mb-xrf">
+                    <connections>
+                        <action selector="showSwipeRight:" destination="vXZ-lx-hvc" id="L0s-WK-d4W"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <tapGestureRecognizer id="sDf-bN-feY">
+                    <connections>
+                        <action selector="mainViewTap:" destination="vXZ-lx-hvc" id="N5K-iy-OtG"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>

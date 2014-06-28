@@ -9,6 +9,9 @@
 #import "HEREViewController.h"
 
 @interface HEREViewController ()
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeLeftRecognizer;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeRightRecognizer;
+
 
 @end
 
@@ -29,23 +32,28 @@
 - (void)sendTextMessage{
     NSString * phoneNumber = [phoneNumberTextField text];
     if( [phoneNumber  isEqual: @""] ){
-        NSLog(@"Error");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid input"
+                                                  message:@"Enter the number you would like to send your location to"
+                                                  delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+        [alert show];
     }
     else{
-        NSLog(@"No error");
+        if([MFMessageComposeViewController canSendText]){
+            MFMessageComposeViewController * messageController = [[MFMessageComposeViewController alloc] init];
+            [messageController setMessageComposeDelegate:self];
+            [messageController setRecipients:[NSArray arrayWithObject:[phoneNumberTextField text]]];
+            [messageController setBody:@"I'm Here!\nThis message was sent from my app... You too will be able to send your location!"];
+            [self presentViewController:messageController animated:YES completion:nil];
+            NSLog(@"Sent text");
+        }
+        else{
+            NSLog(@"You messed up");
+        }
     }
     
-    if([MFMessageComposeViewController canSendText]){
-        MFMessageComposeViewController * messageController = [[MFMessageComposeViewController alloc] init];
-        [messageController setMessageComposeDelegate:self];
-        [messageController setRecipients:[NSArray arrayWithObject:@"7277431594"]];
-        [messageController setBody:@"I'm Here!\n This message was sent from my app... Did it work?"];
-        [self presentViewController:messageController animated:YES completion:nil];
-        NSLog(@"Sent text");
-    }
-    else{
-        NSLog(@"You fucked up");
-    }
+    
     
 }
 
@@ -66,13 +74,18 @@
             break;
     }
     [self dismissViewControllerAnimated:YES completion:nil];
+    [phoneNumberTextField setText:@""];
 
 }
 
 
 - (IBAction)imHereButtonPress:(id)sender {
     [phoneNumberTextField resignFirstResponder];
+    NSLog(@"resignedFirstResponder");
     [self sendTextMessage];
+}
+
+- (IBAction)something:(id)sender {
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -80,8 +93,34 @@
     return YES;
 }
 
-- (IBAction)backgroundTapped:(id)sender {
-    [self.view endEditing:YES];
+- (void)hideKeyBoard{
+    [phoneNumberTextField resignFirstResponder];
+}
+
+- (IBAction)showSwipLeft:(UISwipeGestureRecognizer *)recognizer {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                    message:@"You just swiped left"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
+- (IBAction)showSwipeRight:(UISwipeGestureRecognizer*)recognizer{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                    message:@"You just swiped right"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
+- (IBAction)mainViewTap:(UITapGestureRecognizer *)recognizer{
+    NSLog(@"mainViewTap:");
+    if([phoneNumberTextField isFirstResponder]){
+        [self hideKeyBoard];
+        NSLog(@"Hide keyboard");
+    }
 }
 
 @end

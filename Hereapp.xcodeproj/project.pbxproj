@@ -22,6 +22,7 @@
 		166B3E71195806EE003B9420 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 166B3E6F195806EE003B9420 /* InfoPlist.strings */; };
 		166B3E73195806EE003B9420 /* HereappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 166B3E72195806EE003B9420 /* HereappTests.m */; };
 		166B3E861959376A003B9420 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166B3E851959376A003B9420 /* MessageUI.framework */; };
+		167E36C2195F45B100F6125D /* P1030893.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 167E36C1195F45B100F6125D /* P1030893.JPG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		166B3E70195806EE003B9420 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		166B3E72195806EE003B9420 /* HereappTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HereappTests.m; sourceTree = "<group>"; };
 		166B3E851959376A003B9420 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		167E36C1195F45B100F6125D /* P1030893.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = P1030893.JPG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,9 +120,9 @@
 			children = (
 				166B3E56195806EE003B9420 /* HEREAppDelegate.h */,
 				166B3E57195806EE003B9420 /* HEREAppDelegate.m */,
-				166B3E59195806EE003B9420 /* Main.storyboard */,
 				166B3E5C195806EE003B9420 /* HEREViewController.h */,
 				166B3E5D195806EE003B9420 /* HEREViewController.m */,
+				166B3E59195806EE003B9420 /* Main.storyboard */,
 				166B3E5F195806EE003B9420 /* Images.xcassets */,
 				166B3E4E195806EE003B9420 /* Supporting Files */,
 			);
@@ -130,6 +132,7 @@
 		166B3E4E195806EE003B9420 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				167E36C1195F45B100F6125D /* P1030893.JPG */,
 				166B3E4F195806EE003B9420 /* Hereapp-Info.plist */,
 				166B3E50195806EE003B9420 /* InfoPlist.strings */,
 				166B3E53195806EE003B9420 /* main.m */,
@@ -239,6 +242,7 @@
 				166B3E60195806EE003B9420 /* Images.xcassets in Resources */,
 				166B3E52195806EE003B9420 /* InfoPlist.strings in Resources */,
 				166B3E5B195806EE003B9420 /* Main.storyboard in Resources */,
+				167E36C2195F45B100F6125D /* P1030893.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +386,6 @@
 		166B3E77195806EE003B9420 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -396,7 +399,6 @@
 		166B3E78195806EE003B9420 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -466,6 +468,7 @@
 				166B3E78195806EE003B9420 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		166B3E79195806EE003B9420 /* Build configuration list for PBXNativeTarget "HereappTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +477,7 @@
 				166B3E7B195806EE003B9420 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
