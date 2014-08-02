@@ -41,9 +41,7 @@
                                                   otherButtonTitles:nil];
         [alert show];
     }
-    else{
-        if([MFMessageComposeViewController canSendText]){
-            
+    else if([MFMessageComposeViewController canSendText]){
             if(geoCoder == nil){
                 NSLog(@"geoCoder == nil");
                 geoCoder = [[CLGeocoder alloc] init];
@@ -76,14 +74,10 @@
                 }
             }];
             NSLog(@"Async call proof");
-        }
-        else{
-            NSLog(@"You messed up");
-        }
     }
-    
-    
-    
+    else{
+        NSLog(@"Error in sending the message");
+    }
 }
 
 -(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
