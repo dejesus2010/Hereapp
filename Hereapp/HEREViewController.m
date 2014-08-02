@@ -20,11 +20,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
     locationManager = [[CLLocationManager alloc] init];
-    [locationManager setDesiredAccuracy:20];
-    [locationManager setDistanceFilter:20];
     locationManager.delegate = self;
-    [locationManager startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning
