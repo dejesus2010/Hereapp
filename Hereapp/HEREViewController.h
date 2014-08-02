@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface HEREViewController : UIViewController <MFMessageComposeViewControllerDelegate,UITextFieldDelegate, MFMessageComposeViewControllerDelegate>{
+@interface HEREViewController : UIViewController <MFMessageComposeViewControllerDelegate,UITextFieldDelegate, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate>{
     
     IBOutlet UITextField *phoneNumberTextField;
-    
+    CLLocationManager * locationManager;
+    CLGeocoder * geoCoder;
 }
 - (IBAction)imHereButtonPress:(id)sender;
 

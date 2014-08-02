@@ -12,7 +12,6 @@
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeLeftRecognizer;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeRightRecognizer;
 
-
 @end
 
 @implementation HEREViewController
@@ -21,6 +20,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    locationManager = [[CLLocationManager alloc] init];
+    [locationManager setDesiredAccuracy:20];
+    [locationManager setDistanceFilter:20];
+    locationManager.delegate = self;
+    [locationManager startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,12 +45,39 @@
     }
     else{
         if([MFMessageComposeViewController canSendText]){
-            MFMessageComposeViewController * messageController = [[MFMessageComposeViewController alloc] init];
-            [messageController setMessageComposeDelegate:self];
-            [messageController setRecipients:[NSArray arrayWithObject:[phoneNumberTextField text]]];
-            [messageController setBody:@"I'm Here!\nThis message was sent from my app... You too will be able to send your location!"];
-            [self presentViewController:messageController animated:YES completion:nil];
-            NSLog(@"Sent text");
+            
+            if(geoCoder == nil){
+                NSLog(@"geoCoder == nil");
+                geoCoder = [[CLGeocoder alloc] init];
+            }
+            
+            CLLocation * location = [locationManager location];
+            NSLog(@"%@", [location description]);
+            
+            [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+                
+                MFMessageComposeViewController * messageController = [[MFMessageComposeViewController alloc] init];
+                [messageController setMessageComposeDelegate:self];
+                [messageController setRecipients:[NSArray arrayWithObject:[phoneNumberTextField text]]];
+                
+                if([placemarks count] > 0){
+                    
+                    NSLog(@"placemark has %lu placemarks", (unsigned long)[placemarks count]);
+                    
+                    CLPlacemark * aPlacemark = [placemarks objectAtIndex:0];
+                    
+                    NSLog(@"name: %@", [aPlacemark name]);
+                    
+                    [messageController setBody: [aPlacemark name]];
+                    
+                    [self presentViewController:messageController animated:YES completion:nil];
+                    NSLog(@"Senttt text");
+                }
+                else{
+                    NSLog(@"No placemarks");
+                }
+            }];
+            NSLog(@"Async call proof");
         }
         else{
             NSLog(@"You messed up");
@@ -59,19 +90,22 @@
 
 -(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
     switch (result) {
-        case MessageComposeResultSent:
-            NSLog(@"Sent");
+        case MessageComposeResultSent:{
+            NSLog(@"Sent message");
             break;
-        case MessageComposeResultCancelled:
+        }
+        case MessageComposeResultCancelled:{
             NSLog(@"Cancelled");
             break;
-        case MessageComposeResultFailed:
+        }
+        case MessageComposeResultFailed:{
             NSLog(@"Failed");
             break;
-            
-        default:
+        }
+        default:{
             NSLog(@"Default");
             break;
+        }
     }
     [self dismissViewControllerAnimated:YES completion:nil];
     [phoneNumberTextField setText:@""];

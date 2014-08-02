@@ -23,6 +23,7 @@
 		166B3E73195806EE003B9420 /* HereappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 166B3E72195806EE003B9420 /* HereappTests.m */; };
 		166B3E861959376A003B9420 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166B3E851959376A003B9420 /* MessageUI.framework */; };
 		167E36C2195F45B100F6125D /* P1030893.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 167E36C1195F45B100F6125D /* P1030893.JPG */; };
+		16DA07201989DB34002A9AF9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DA071F1989DB34002A9AF9 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		166B3E72195806EE003B9420 /* HereappTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HereappTests.m; sourceTree = "<group>"; };
 		166B3E851959376A003B9420 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		167E36C1195F45B100F6125D /* P1030893.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = P1030893.JPG; sourceTree = "<group>"; };
+		16DA071F1989DB34002A9AF9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16DA07201989DB34002A9AF9 /* CoreLocation.framework in Frameworks */,
 				166B3E861959376A003B9420 /* MessageUI.framework in Frameworks */,
 				166B3E4A195806EE003B9420 /* CoreGraphics.framework in Frameworks */,
 				166B3E4C195806EE003B9420 /* UIKit.framework in Frameworks */,
@@ -106,6 +109,7 @@
 		166B3E46195806EE003B9420 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				16DA071F1989DB34002A9AF9 /* CoreLocation.framework */,
 				166B3E851959376A003B9420 /* MessageUI.framework */,
 				166B3E47195806EE003B9420 /* Foundation.framework */,
 				166B3E49195806EE003B9420 /* CoreGraphics.framework */,

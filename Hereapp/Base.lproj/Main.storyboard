@@ -83,7 +83,7 @@
                 </swipeGestureRecognizer>
                 <tapGestureRecognizer id="sDf-bN-feY">
                     <connections>
-                        <action selector="mainViewTap:" destination="vXZ-lx-hvc" id="N5K-iy-OtG"/>
+                        <action selector="mainViewTap:" destination="vXZ-lx-hvc" id="KaL-Dh-CdT"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
